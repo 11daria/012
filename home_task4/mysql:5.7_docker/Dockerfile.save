@@ -1,0 +1,16 @@
+########
+# Dockerfile to build mysql:5.7 container images/
+########
+FROM mysql:5.7
+
+MAINTAINER goncharova@ukr.net
+
+ENV MYSQL_ROOT_PASSWORD=MyRootPassword
+ENV MYSQL_DATABASE=goncharova
+ENV MYSQL_USER=daria
+ENV MYSQL_PASSWORD=MyUserPassword
+
+EXPOSE 3306
+
+
+

@@ -1,0 +1,13 @@
+version: '3.0'
+services:
+  ubuntu:
+    build:
+      context: ./ubuntu_docker
+      dockerfile: Dockerfile
+#      links: 
+#        - mysql
+  mysql:
+    build:
+      context: ./mysql:5.7_docker
+      dockerfile: Dockerfile
+  
