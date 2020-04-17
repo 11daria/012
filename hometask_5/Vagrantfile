@@ -5,8 +5,16 @@ Vagrant.configure("2") do |config|
   ubuntu.vm.network "forwarded_port", guest: 80, host: 8080
   ubuntu.vm.synced_folder "/home/daria/012/hometask_5/Goncharova", "/home/vagrant/"
   ubuntu.vm.provision "shell",
-  inline: "
-    docker-compose up -d"
+  inline: <<-SHELL 
+    # Install docker and docker compose
+    sudo -i
+    echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+    curl -sSL https://get.docker.com/ | sh
+    usermod -aG docker vagrant
+    curl -L https://github.com/docker/compose/releases/download/1.5.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose    
+    docker-compose up -d
+   SHELL
 
 end
   
