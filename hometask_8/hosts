@@ -1,0 +1,10 @@
+
+[group1]
+node1 ansible_host = 192.168.2.11 ansible_user = vagrant ansible_ssh_port=2221 ansible_ssh_private_key_file='.vagrant/machines/node1/virtualbox/private_key'
+
+
+[group2]
+node2 ansible_host = 192.168.2.12 ansible_user = vagrant ansible_ssh_port=2222 ansible_ssh_private_key_file='.vagrant/machines/node2/virtualbox/private_key'
+
+
+
