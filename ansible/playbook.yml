@@ -1,0 +1,6 @@
+---
+- name: Tomcat-server
+  hosts: myserver
+  become: yes
+  roles:
+    - tomcat-role
